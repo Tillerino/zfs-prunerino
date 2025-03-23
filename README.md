@@ -6,7 +6,7 @@ Most are really complex, typically requiring global configuration and background
 At the same time, they are often very opinionated.
 I prefer small, composable tools.
 
-`sudo zfs destroy $(zfs-prunerino 23h,6d,3w,11m,10y)`
+`zfs-prunerino 23h,6d,3w,11m,10y | xargs -n 1 sudo zfs destroy`
 
 ## Pruning snapshots
 
@@ -36,7 +36,7 @@ zfs-prunerino outputs a list of snapshots to destroy.
 Dry-run? Manage sudo? No thank you. It's your setup, you know best.
 Just stick the output into how ever you want to destroy snapshots.
 
-Simple: `sudo zfs destroy $(zfs-prunerino 23h,6d,3w,11m,10y)`
+Simple: `zfs-prunerino 23h,6d,3w,11m,10y | xargs -n 1 sudo zfs destroy`
 
 Complex:
 - Look at the output of `zfs-prunerino` for a "dry run"
