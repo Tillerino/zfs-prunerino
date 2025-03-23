@@ -10,14 +10,12 @@
       zfs-prunerino = pkgs.python3Packages.buildPythonPackage {
         name = "zfs-prunerino";
         src = ./.;
-
-        #buildPhase = ""; # nothing to build
-        #preBuild = ""; # nothing to build
-        #postBuild = ""; # nothing to build
-        #installPhase = ''
-        #  mkdir -p $out/bin
-        #  cp -r $src/zfs-prunerino $out/bin
-        #'';
+        version = "0.1";
+        meta = {
+          description = "Simple tool to prune zfs snapshots with spaced retention";
+          homepage = "https://github.com/Tillerino/zfs-prunerino";
+          license = pkgs.lib.licenses.asl20;
+        };
       };
     in {
       default = zfs-prunerino;
