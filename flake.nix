@@ -11,10 +11,13 @@
         name = "zfs-prunerino";
         src = ./.;
 
-        installPhase = ''
-          mkdir -p $out/bin
-          cp -r $src/zfs-prunerino $out/bin
-        '';
+        #buildPhase = ""; # nothing to build
+        #preBuild = ""; # nothing to build
+        #postBuild = ""; # nothing to build
+        #installPhase = ''
+        #  mkdir -p $out/bin
+        #  cp -r $src/zfs-prunerino $out/bin
+        #'';
       };
     in {
       default = zfs-prunerino;
